@@ -7,7 +7,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = scene as? UIWindowScene else { return }
+        // 用 as! 替代 guard：如果 scene 不是 UIWindowScene 会直接崩溃
+        // → 控制台能看到具体错误，不再无信息黑屏。
+        let windowScene = scene as! UIWindowScene
 
         let w = UIWindow(windowScene: windowScene)
         w.backgroundColor = .systemBlue

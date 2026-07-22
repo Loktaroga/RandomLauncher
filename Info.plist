@@ -41,7 +41,7 @@
                     <key>UISceneConfigurationName</key>
                     <string>Default</string>
                     <key>UISceneDelegateClassName</key>
-                    <string>SceneDelegate</string>
+                    <string>RandomLauncher.SceneDelegate</string>
                 </dict>
             </array>
         </dict>
