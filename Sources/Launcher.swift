@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 extension Date {
     fileprivate var dayKey: String {
@@ -131,7 +132,7 @@ final class Launcher {
                 ? (app.perform(nameSel)?.takeUnretainedValue() as? String ?? bid) : bid
             result.append(InstalledApp(name: name, bundleID: bid))
         }
-        result.sort { $0.name.localizedCaseInsensitiveCompare($0.name) == .orderedAscending }
+        result.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
         return result
     }
 
