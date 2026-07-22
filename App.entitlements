@@ -2,20 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <!-- 允许调试附着（开发期方便，发布可移除） -->
-    <key>get-task-allow</key>
-    <true/>
-
-    <!-- 去掉沙盒容器限制，使 app 能以“系统级”身份调用私有 API（TrollStore 关键） -->
     <key>com.apple.private.security.container-required</key>
     <false/>
-
-    <!-- 跳过库校验，避免私有框架链接被拒 -->
     <key>com.apple.private.skip-library-validation</key>
     <true/>
-
-    <!-- 注意：不要手写 application-identifier（会带 team 前缀，写死必导致启动崩溃）；
-         也不要加 MobileContainerManager.allowed 等受保护私有 entitlement（iOS 会拒启动）。
-         TrollStore 安装时会注入正确的 application-identifier。 -->
 </dict>
 </plist>
