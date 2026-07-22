@@ -31,7 +31,8 @@ if ! command -v ldid >/dev/null 2>&1; then
 fi
 
 # 5) 用私有权限伪造签名
-ldid -S App.entitlements "$APP"
+# 注意：ldid 的 -S 必须紧跟 entitlements 路径（不能有空格），否则会把 entitlements 当成要签名的二进制而崩溃
+ldid -SApp.entitlements "$APP"
 
 # 6) 打包为 IPA（Payload/ 结构）
 rm -rf Payload RandomLauncher.ipa
