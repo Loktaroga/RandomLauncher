@@ -8,14 +8,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
-        window?.makeKeyAndVisible()
 
-        UIApplication.shared.isIdleTimerDisabled = true
+        let w = UIWindow(windowScene: windowScene)
+        w.backgroundColor = .systemBlue
+        w.rootViewController = ViewController()
+        w.makeKeyAndVisible()
+        window = w
     }
 
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        // 处理 randomlauncher:// 回跳：系统已将本 App 带到前台，Launcher 继续驱动计时。
-    }
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {}
 }
