@@ -1,0 +1,44 @@
+name: RandomLauncher
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.example.randomlauncher
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: ""
+    PROVISIONING_PROFILE_SPECIFIER: ""
+    ENABLE_BITCODE: "NO"
+    ONLY_ACTIVE_ARCH: "YES"
+    ARCHS: arm64
+    VALID_ARCHS: arm64
+    SDKROOT: iphoneos
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    ENTITLEMENTS_FILE: App.entitlements
+targets:
+  RandomLauncher:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+    info:
+      properties:
+        UILaunchScreen: {}
+        CFBundleDisplayName: RandomLauncher
+        CFBundleName: RandomLauncher
+        UIApplicationSupportsIndefiniteTracking: true
+        CFBundleURLTypes:
+          - CFBundleURLName: com.example.randomlauncher
+            CFBundleURLSchemes:
+              - randomlauncher
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        CFBundleURLTypes:
+          - CFBundleURLName: com.example.randomlauncher
+            CFBundleURLSchemes:
+              - randomlauncher

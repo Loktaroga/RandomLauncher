@@ -1,0 +1,20 @@
+# Xcode / XcodeGen
+*.xcodeproj
+*.xcworkspace
+DerivedData/
+Build/
+*.xcuserdata/
+*.hmap
+*.ipa
+
+# Build artifacts
+*.app/
+Payload/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

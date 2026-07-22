@@ -1,0 +1,25 @@
+name: Build TrollStore IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install xcodegen & ldid
+        run: brew install xcodegen ldid
+
+      - name: Build and package IPA
+        run: ./build.sh
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RandomLauncher.ipa
+          path: RandomLauncher.ipa
