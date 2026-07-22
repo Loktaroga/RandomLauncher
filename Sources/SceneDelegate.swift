@@ -11,5 +11,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
+
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        // 处理 randomlauncher:// 回跳：系统已将本 App 带到前台，Launcher 继续驱动计时。
     }
 }
