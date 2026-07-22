@@ -7,8 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        application.isIdleTimerDisabled = true
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .systemBlue
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
         return true
