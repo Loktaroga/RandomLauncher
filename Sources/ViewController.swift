@@ -123,14 +123,22 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     // MARK: - 本机 App 列表
 
     private func loadApps() {
-        apps = Launcher.installedApps()
-        appPicker.reloadAllComponents()
-        if !apps.isEmpty {
-            appPicker.selectRow(0, inComponent: 0, animated: false)
-            bundleField.text = apps[0].bundleID
-        } else {
-            // 非真机/无权限时降级为手填
-            bundleField.text = "com.apple.MobileSafari"
+        // 放到后台线程读取本机 App 列表：避免私有 API 调用在启动期阻塞/偶发崩溃影响首屏显示。
+        // 即使读取失败也不会拖垮启动，ViewController 先正常呈现，列表加载完再回填。
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let list = Launcher.installedApps()
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.apps = list
+                self.appPicker.reloadAllComponents()
+                if !list.isEmpty {
+                    self.appPicker.selectRow(0, inComponent: 0, animated: false)
+                    self.bundleField.text = list[0].bundleID
+                } else {
+                    // 非真机/无权限时降级为手填
+                    self.bundleField.text = "com.apple.MobileSafari"
+                }
+            }
         }
     }
 

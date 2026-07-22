@@ -14,11 +14,8 @@
     <key>com.apple.private.skip-library-validation</key>
     <true/>
 
-    <!-- 允许调用 LSApplicationWorkspace 拉起其他 app（如遇拉起失败可补上此条） -->
-    <key>com.apple.private.MobileContainerManager.allowed</key>
-    <true/>
-
-    <key>application-identifier</key>
-    <string>com.example.randomlauncher</string>
+    <!-- 注意：不要手写 application-identifier（会带 team 前缀，写死必导致启动崩溃）；
+         也不要加 MobileContainerManager.allowed 等受保护私有 entitlement（iOS 会拒启动）。
+         TrollStore 安装时会注入正确的 application-identifier。 -->
 </dict>
 </plist>
