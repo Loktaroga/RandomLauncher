@@ -139,9 +139,14 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { apps.count }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        max(apps.count, 1)
+    }
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int, forComponent component: Int) -> String? {
+        if apps.isEmpty {
+            return "（需权限，暂无法读取。请手动填写下方 Bundle ID）"
+        }
         guard apps.indices.contains(row) else { return nil }
         return "\(apps[row].name)  (\(apps[row].bundleID))"
     }
@@ -158,8 +163,8 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         v.layer.cornerRadius = 12
         let label = UILabel()
         label.text = titleText
-        label.font = .systemFont(ofSize: 12)
-        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.textColor = .label
         view.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(label)
         v.addSubview(view)
@@ -180,8 +185,8 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         v.layer.cornerRadius = 12
         let label = UILabel()
         label.text = titleText
-        label.font = .systemFont(ofSize: 12)
-        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.textColor = .label
         field.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(label)
         v.addSubview(field)
@@ -202,7 +207,7 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         v.layer.cornerRadius = 12
         let label = UILabel()
         label.text = titleText
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .label
         sw.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(label)
