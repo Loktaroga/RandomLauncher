@@ -148,7 +148,7 @@ final class Launcher {
         guard let ws = wsClass.perform(defaultSel)?.takeUnretainedValue() as? NSObject else {
             return false
         }
-        let openSel = NSSelectorFromString("openApplicationWithBundleIdentifier:")
+        let openSel = NSSelectorFromString("openApplicationWithBundleID:")
         guard ws.responds(to: openSel) else { return false }
         let ret = ws.perform(openSel, with: bundleIdentifier)
         return ret != nil
