@@ -31,20 +31,5 @@
         <string>UIInterfaceOrientationLandscapeLeft</string>
         <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
-    <key>UISceneManifest</key>
-    <dict>
-        <key>UISceneConfigurations</key>
-        <dict>
-            <key>UIWindowSceneSessionRoleApplication</key>
-            <array>
-                <dict>
-                    <key>UISceneConfigurationName</key>
-                    <string>Default</string>
-                    <key>UISceneDelegateClassName</key>
-                    <string>RandomLauncher.SceneDelegate</string>
-                </dict>
-            </array>
-        </dict>
-    </dict>
 </dict>
 </plist>
