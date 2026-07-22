@@ -72,12 +72,15 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let title = UILabel()
         title.text = "RandomLauncher"
         title.font = .systemFont(ofSize: 30, weight: .bold)
+        title.textColor = .label
+        title.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(title)
 
         let subtitle = UILabel()
         subtitle.text = "在指定时段内随机拉起 App"
         subtitle.font = .systemFont(ofSize: 13)
         subtitle.textColor = .secondaryLabel
+        subtitle.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(subtitle)
 
         stack.addArrangedSubview(card(titleText: "开始时间", view: startPicker))
@@ -116,6 +119,7 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         statusLabel.numberOfLines = 0
         statusLabel.font = .systemFont(ofSize: 12)
         statusLabel.textColor = .secondaryLabel
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(statusLabel)
     }
 
@@ -165,6 +169,7 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         label.text = titleText
         label.font = .systemFont(ofSize: 14, weight: .medium)
         label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(label)
         v.addSubview(view)
@@ -187,6 +192,7 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         label.text = titleText
         label.font = .systemFont(ofSize: 14, weight: .medium)
         label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
         field.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(label)
         v.addSubview(field)
@@ -209,6 +215,7 @@ final class ViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         label.text = titleText
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
         sw.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(label)
         v.addSubview(sw)
