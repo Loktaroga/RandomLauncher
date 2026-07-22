@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>UILaunchScreen</key>
+    <dict/>
+    <key>CFBundleDisplayName</key>
+    <string>RandomLauncher</string>
+    <key>CFBundleName</key>
+    <string>RandomLauncher</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleExecutable</key>
+    <string>RandomLauncher</string>
+    <key>UIApplicationSupportsIndefiniteTracking</key>
+    <true/>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>com.example.randomlauncher</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>randomlauncher</string>
+            </array>
+        </dict>
+    </array>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+</dict>
+</plist>

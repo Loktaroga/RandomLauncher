@@ -25,20 +25,4 @@ targets:
     sources:
       - path: Sources
     info:
-      properties:
-        UILaunchScreen: {}
-        CFBundleDisplayName: RandomLauncher
-        CFBundleName: RandomLauncher
-        UIApplicationSupportsIndefiniteTracking: true
-        CFBundleURLTypes:
-          - CFBundleURLName: com.example.randomlauncher
-            CFBundleURLSchemes:
-              - randomlauncher
-        UISupportedInterfaceOrientations:
-          - UIInterfaceOrientationPortrait
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
-        CFBundleURLTypes:
-          - CFBundleURLName: com.example.randomlauncher
-            CFBundleURLSchemes:
-              - randomlauncher
+      path: Info.plist

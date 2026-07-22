@@ -9,7 +9,7 @@ if [ ! -d RandomLauncher.xcodeproj ]; then
 fi
 
 # 2) 编译（关闭签名，后续用 ldid 伪造签名供 TrollStore 使用）
-xcodebuild -target RandomLauncher \
+xcodebuild -project RandomLauncher.xcodeproj -target RandomLauncher \
   -configuration Release \
   -sdk iphoneos \
   -arch arm64 \
